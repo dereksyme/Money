@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import { CgProfile } from 'react-icons/cg';
 import { RiMoneyDollarCircleLine } from 'react-icons/ri';
 import { BsPiggyBank } from 'react-icons/bs';
+import { AiOutlinePieChart } from 'react-icons/ai';
 //https://react-icons.github.io/react-icons/search?q=money
 import { store } from './app/store'
 import App from './App'
@@ -20,6 +21,8 @@ const Icon = ({name, size}) => {
     return <RiMoneyDollarCircleLine size={size} />
   } else if(name === 'CgProfile'){
     return <CgProfile size={size} />
+  } else if(name === 'AiOutlinePieChart'){
+    return <AiOutlinePieChart size={size}/>
   }
   return (
     <div />
@@ -51,7 +54,7 @@ const PageLink = ({text, iconName}) => {
         //marginBottom: 10
       }}
     >
-      <Icon name={iconName} size={25} />
+      <Icon name={iconName} size={25}/>
       {text}
     </div>
   )
@@ -105,7 +108,7 @@ root.render(
         }}>
           {/* Page Links */}
           <PageLink text='Funds' iconName='BsPiggyBank' />
-          <PageLink text='Charts' iconName='BsPiggyBank' />
+          <PageLink text='Charts' iconName='AiOutlinePieChart' />
           <PageLink text='Payday' iconName='RiMoneyDollarCircleLine' />
         </div>
       </div>
