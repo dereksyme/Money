@@ -38,7 +38,6 @@ describe('Frequency', () => {
 
     it('should return frequencies based on $5200 annually', () => {
         const weeklyFrequency = getAllFrequenciesByFrequencyType('annually', 5200)
-        l(weeklyFrequency)
         expect(weeklyFrequency).toEqual(expectedFrequencies)
     })
 })

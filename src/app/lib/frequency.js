@@ -1,3 +1,5 @@
+
+import roundTo2Decimals from './roundTo2Decimals.js'
 import {
     WEEKS_IN_BIWEEKLY_PERIOD,
     WEEKS_IN_MONTH,
@@ -11,7 +13,7 @@ import {
     QUARTERS_IN_YEAR
 } from './calendarConversions.js'
 
-const roundTo2Decimals = num => Math.round(num * 100) / 100 //https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
+//const roundTo2Decimals = num => Math.round(num * 100) / 100 //https://stackoverflow.com/questions/11832914/how-to-round-to-at-most-2-decimal-places-if-necessary
  
 let l = console.log
 
@@ -110,7 +112,3 @@ const getAllFrequenciesByFrequencyType = (frequencyType, amount) => {
 }
 
 export default getAllFrequenciesByFrequencyType
-
-//l(getAllFrequenciesByFrequencyType('annually', 100))
-//User unit testing to prove
-console.log(getAllFrequenciesByFrequencyType('weekly', 100))

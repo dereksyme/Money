@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { CgProfile } from 'react-icons/cg';
-import { RiMoneyDollarCircleLine } from 'react-icons/ri';
-import { BsPiggyBank } from 'react-icons/bs';
-import { AiOutlinePieChart } from 'react-icons/ai';
+// import { CgProfile } from 'react-icons/cg';
+// import { RiMoneyDollarCircleLine } from 'react-icons/ri';
+// import { BsPiggyBank } from 'react-icons/bs';
+// import { AiOutlinePieChart } from 'react-icons/ai';
 //https://react-icons.github.io/react-icons/search?q=money
-import { store } from './app/store'
-import App from './App'
+import { store } from './app/store.js'
+import App from './App.js'
+import TableView from './TableView.js'
 import './index.css'
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 
-const Icon = ({name, size}) => {
+// const Icon = ({name, size}) => {
 
-  if(name === 'BsPiggyBank'){
-    return <BsPiggyBank size={size} />
-  } else if(name === 'RiMoneyDollarCircleLine'){
-    return <RiMoneyDollarCircleLine size={size} />
-  } else if(name === 'CgProfile'){
-    return <CgProfile size={size} />
-  } else if(name === 'AiOutlinePieChart'){
-    return <AiOutlinePieChart size={size}/>
-  }
-  return (
-    <div />
-  )
-}
+//   if(name === 'BsPiggyBank'){
+//     return <BsPiggyBank size={size} />
+//   } else if(name === 'RiMoneyDollarCircleLine'){
+//     return <RiMoneyDollarCircleLine size={size} />
+//   } else if(name === 'CgProfile'){
+//     return <CgProfile size={size} />
+//   } else if(name === 'AiOutlinePieChart'){
+//     return <AiOutlinePieChart size={size}/>
+//   }
+//   return (
+//     <div />
+//   )
+// }
 
 const PageLink = ({text, iconName}) => {
 
@@ -54,7 +55,7 @@ const PageLink = ({text, iconName}) => {
         //marginBottom: 10
       }}
     >
-      <Icon name={iconName} size={25}/>
+      {/* <Icon name={iconName} size={25}/> */}
       {text}
     </div>
   )
@@ -93,7 +94,7 @@ root.render(
               cursor: 'pointer'
             }}
           >
-            <Icon name='CgProfile' size={30} />
+            {/* <Icon name='CgProfile' size={30} /> */}
           </div>
         </div>
         {/* Sidebar */}
@@ -111,7 +112,23 @@ root.render(
           <PageLink text='Charts' iconName='AiOutlinePieChart' />
           <PageLink text='Payday' iconName='RiMoneyDollarCircleLine' />
         </div>
+
+
       </div>
+
+              {/* Table */}
+              <div style={{ 
+          position: 'absolute',
+          //width: 110,
+          //height: '100%',
+          left: 120,
+          top: 100,
+          //paddingTop: 8,
+          //background: '#282828'
+        }}>
+          <TableView />
+        </div>
+
     </Provider>
   </React.StrictMode>
 )
